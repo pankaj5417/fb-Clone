@@ -5,8 +5,9 @@ const dotenv=require('dotenv')
 const morgan=require('morgan')
 const helmet=require('helmet')
 
-const userRoute=require("./routes/user")
-const authRoute=require("./routes/auth")
+const userRoute=require("./routes/user.controller")
+const authRoute=require("./routes/auth.controller")
+const postRoute=require('./routes/post.controller')
 
 dotenv.config()
 
@@ -26,6 +27,7 @@ app.use(morgan('common'))
 
 app.use("/api/users",userRoute)
 app.use("/api/auth",authRoute)
+app.use('/api/posts',postRoute)
 
 
 app.listen(8000,()=>{
