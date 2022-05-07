@@ -60,7 +60,7 @@ router.delete("/:id", async(req, res)=>{
 })
 
 //like a post
- router.put('/:id/like', async(req,res)=>{
+ router.put('/:id/likes', async(req,res)=>{
    try {
        const post= await PostModel.findById(req.params.id)
 
@@ -81,8 +81,8 @@ router.delete("/:id", async(req, res)=>{
 
 router.get('/:id', async(req, res)=>{
     try {
-        const post= await findById(req.params.id)
-        return res.status(200).json(post)
+        const post= await PostModel.findById(req.params.id)
+        return res.status(200).send(post)
         
     }catch(error) {
         return res.status(403).json(error)
@@ -91,18 +91,18 @@ router.get('/:id', async(req, res)=>{
 })
 
 // get timeline posts
-router.get("/timeline", async(req,res)=>{
+router.get("/timeline/all", async(req,res)=>{
     
     try {
         const currentUser=await UserModel.findById(req.body.userId)
         const userPosts= await PostModel.find({userId:currentUser._id})
         const friendPosts= await Promise.all(
-            currentUser.followings.map(friendId=>{
-                PostModel.find({userId:friendId})
+            currentUser.following.map(friendId=>{
+               return PostModel.find({userId:friendId})
             })
         )
-        const timelinePosts=userPosts.concat(...friendPosts)
-        return res.status(200).json(timelinePosts)
+       // const timelinePosts=userPosts.concat(...friendPosts)
+        return res.status(200).json(userPosts.concat(...friendPosts))
     } catch (error) {
         return res.status(500).json(error)
     }

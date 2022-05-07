@@ -6,7 +6,7 @@ const User=require("../models/User.model")
 //REGISTER
 
 router.post("/register", async(req,res)=>{
-    console.log("ready")
+    //console.log("ready")
     try{
         //generate new hashed  password
         const salt=await bcrypt.genSalt(10);
