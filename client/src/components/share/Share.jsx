@@ -16,7 +16,7 @@ export const Share=()=>{
                     <div className='shareOptions'>
                     <div className="shareOption">
                         <PermMedia htmlColor='tomato' className='shareIcon'/>
-                        <span className="shareOptionsText">Photo or Video</span>
+                        <span className="shareOptionsText">Photo/Video</span>
                     </div>
                     <div className="shareOption">
                         <Label htmlColor='blue' className='shareIcon'/>
@@ -28,7 +28,7 @@ export const Share=()=>{
                     </div>
                     <div className="shareOption">
                         <EmojiEmotions htmlColor='goldenrod' className='shareIcon'/>
-                        <span className="shareOptionsText">feelings</span>
+                        <span className="shareOptionsText">feelings/activity</span>
                     </div>
 
                     </div>

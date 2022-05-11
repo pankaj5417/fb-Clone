@@ -2,12 +2,11 @@ import './rightbar.css'
 import { Users } from '../../dummyData'
 import Online from '../online/Online'
 
-export const Rightbar=()=>{
-    return (
-        <>
-        <div className="rightbar">
-            <div className="rightbarWrapper">
-                <div className="birthdayContainer">
+export const Rightbar=({profile})=>{
+    const HomeRightbar=()=>{
+        return (
+            <>
+            <div className="birthdayContainer">
                     <img src="assets/gift.png" alt="" className="birthdayImg" />
                     <span className="birthdayText">
                         <b>Pola Foster</b>and<b>3 other friends</b>have birthday today
@@ -23,6 +22,58 @@ export const Rightbar=()=>{
                        ))
                    }
                 </ul>
+            </>
+        )
+    }
+
+
+    const ProfileRightbar=()=>{
+        return (
+            <>
+            <he className="rightbarTitle">User information</he>
+            <div className="rightbarIngo">
+                <div className="rightbarInfoItem">
+                    <span className="rightbarInfoKey">City:</span>
+                    <span className="rightbarInfoValue">New York</span>
+
+                </div>
+                <div className="rightbarInfoItem">
+                    <span className="rightbarInfoKey">From:</span>
+                    <span className="rightbarInfoValue">Madrid</span>
+                    
+                </div>
+                <div className="rightbarInfoItem">
+                    <span className="rightbarInfoKey">Relationship:</span>
+                    <span className="rightbarInfoValue">single</span>
+                    
+                </div>
+            </div>
+            <h4 className="rightbarTitle">User friends</h4>
+            <div className="rightbarFollowings">
+                <div className="rightbarFollowing">
+                    <img src="assets/person/1.jpeg" alt="" className="rightbarFollowingImg" />
+                    <span className="rightbarFollowingName">John k</span>
+
+                </div>
+                <div className="rightbarFollowing">
+                    <img src="assets/person/1.jpeg" alt="" className="rightbarFollowingImg" />
+                    <span className="rightbarFollowingName">John k</span>
+                    
+                </div>
+                <div className="rightbarFollowing">
+                    <img src="assets/person/1.jpeg" alt="" className="rightbarFollowingImg" />
+                    <span className="rightbarFollowingName">John k</span>
+                    
+                </div>
+            </div>
+            </>
+        )
+    }
+    return (
+        <>
+        <div className="rightbar">
+            <div className="rightbarWrapper">
+              {  profile?<ProfileRightbar />:<HomeRightbar/>}
             </div>
         </div>
         </>

@@ -1,0 +1,108 @@
+#signup {
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#signupModal {
+  /* display: none; */
+  position: fixed;
+  z-index: 99;
+  left: 27%;
+  top: 23%;
+  width:34vw;
+  min-width: 500px;
+  height: 73vh;
+
+  border-radius: 7px;
+  background-color: rgb(0, 0, 0.5);
+  background-color: white;
+  padding-top: 4px;
+  -webkit-box-shadow: -1px 3px 20px -4px rgba(158, 149, 158, 1);
+  -moz-box-shadow: -1px 3px 20px -4px rgba(158, 149, 158, 1);
+  box-shadow: -1px 3px 20px -4px rgba(158, 149, 158, 1);
+}
+.signupTop {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.signupTopRight {
+  font-size: 30px;
+
+}
+.cursor{
+  cursor: pointer;
+}
+/* .signupBotton{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} */
+.signupBox {
+  width: 95%;
+  height: 480px;
+ 
+  
+  min-width: 450px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.signupName {
+  min-width: 400px;
+  width: 96%;
+  height: 60px;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+.signupName input {
+  width: 44%;
+
+  height: 60px;
+  border-radius: 7px;
+  border: 1px solid lightgray;
+  font-size: 18px;
+  padding-left: 20px;
+  outline: none;
+}
+.signupInput {
+    width: 96%;
+  height: 60px;
+  border-radius: 7px;
+  border: 1px solid lightgray;
+  font-size: 18px;
+  padding-left: 20px;
+}
+
+.signupInput:focus {
+  outline: none;
+}
+
+.signupTerm {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.signupButton {
+  width: 55%;
+  margin-top: 10px;
+  align-self: center;
+  height: 52px;
+  border-radius: 7px;
+  border: none;
+  background-color: #42b72a;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
