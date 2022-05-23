@@ -1,4 +1,5 @@
 import {Chat, Notifications, Person, Search } from '@mui/icons-material'
+import { Link } from 'react-router-dom'
 import './topbar.css'
 export const Topbar=()=>{
 
@@ -6,8 +7,11 @@ export const Topbar=()=>{
         <>
     <div className="topbarContainer">
         <div className="topbarLeft">
-
+            <Link to="/" style={{textDecoration:"none"}}>
             <span className="logo">facebook</span>
+
+            </Link>
+
         </div>
         <div className="topbarCenter">
             <div className="searchbar">

@@ -11,29 +11,39 @@ export const Sidebar=()=>{
             <div className="siebarWrapper">
                 <ul className="sidebarList">
                 <li className="sidebarListItem">
-                        <PeopleAlt className='sidebarIcon'/>
+                        {/* <PeopleAlt className='sidebarIcon'/> */}
+                    <img className='sidebarIcon' src="https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/-XF4FQcre_i.png"  alt="" />
                         <span className="sidebarListItemText">Find friends</span>
                     </li>
                     <li className="sidebarListItem">
-                        <GroupsIcon className='sidebarIcon'/>
+                        {/* <RssFeed className='sidebarIcon'/> */}
+                        <img className='sidebarIcon' src="https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/P82afdZb-gc.png" alt="" />
+
+                        <span className="sidebarListItemText">Marketplace</span>
+                    </li>
+                    <li className="sidebarListItem">
+                        {/* <Chat className='sidebarIcon'/> */}
+                        <img className='sidebarIcon' src="https://static.xx.fbcdn.net/rsrc.php/v3/yp/r/24MgFlPfCs5.png" alt="" />
+
+                        <span className="sidebarListItemText">Memories</span>
+                    </li>
+                    <li className="sidebarListItem">
+                    <img className='sidebarIcon' src="https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/mk4dH3FK0jT.png" alt="" />
+                        {/* <GroupsIcon className='sidebarIcon'/> */}
                         <span className="sidebarListItemText">Groups</span>
                     </li>
                     
                     <li className="sidebarListItem">
-                        <RssFeed className='sidebarIcon'/>
-                        <span className="sidebarListItemText">Feed</span>
-                    </li>
-                    <li className="sidebarListItem">
-                        <Chat className='sidebarIcon'/>
-                        <span className="sidebarListItemText">Chats</span>
-                    </li>
-                    <li className="sidebarListItem">
                         <PlayCircleFilledOutlined className='sidebarIcon'/>
-                        <span className="sidebarListItemText">Videos</span>
+                        <img className='sidebarIcon' src="	https://static.xx.fbcdn.net/rsrc.php/v3/yl/r/ob1CgXwDORG.png" alt="" />
+
+                        <span className="sidebarListItemText">Watch</span>
                     </li>
                     
                     <li className="sidebarListItem">
                         <Bookmark className='sidebarIcon'/>
+                        <img className='sidebarIcon' src="https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/mk4dH3FK0jT.png" alt="" />
+
                         <span className="sidebarListItemText">Bookmarks</span>
                     </li>
                     <li className="sidebarListItem">
@@ -42,14 +52,20 @@ export const Sidebar=()=>{
                     </li>
                     <li className="sidebarListItem">
                         <WorkOutline className='sidebarIcon'/>
+                        <img className='sidebarIcon' src="https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/mk4dH3FK0jT.png" alt="" />
+
                         <span className="sidebarListItemText">Jobs</span>
                     </li>
                     <li className="sidebarListItem">
-                        <Event className='sidebarIcon'/>
+                        {/* <Event className='sidebarIcon'/> */}
+                        <img className='sidebarIcon' src="https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/qB7KME4oQ7N.png" alt="" />
+
                         <span className="sidebarListItemText">Events</span>
                     </li>
                     <li className="sidebarListItem">
                         <School className='sidebarIcon'/>
+                        <img className='sidebarIcon' src="https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/mk4dH3FK0jT.png" alt="" />
+
                         <span className="sidebarListItemText">Courses</span>
                     </li>
                    
