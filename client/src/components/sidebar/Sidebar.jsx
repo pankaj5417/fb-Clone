@@ -34,27 +34,22 @@ export const Sidebar=()=>{
                     </li>
                     
                     <li className="sidebarListItem">
-                        <PlayCircleFilledOutlined className='sidebarIcon'/>
+                        {/* <PlayCircleFilledOutlined className='sidebarIcon'/> */}
                         <img className='sidebarIcon' src="	https://static.xx.fbcdn.net/rsrc.php/v3/yl/r/ob1CgXwDORG.png" alt="" />
 
                         <span className="sidebarListItemText">Watch</span>
                     </li>
                     
                     <li className="sidebarListItem">
-                        <Bookmark className='sidebarIcon'/>
-                        <img className='sidebarIcon' src="https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/mk4dH3FK0jT.png" alt="" />
+                        {/* <Bookmark className='sidebarIcon'/> */}
+                        <img className='sidebarIcon' src="	https://static.xx.fbcdn.net/rsrc.php/v3/y_/r/EygD86pCwoD.png" alt="" />
 
-                        <span className="sidebarListItemText">Bookmarks</span>
+                        <span className="sidebarListItemText">Saved</span>
                     </li>
                     <li className="sidebarListItem">
-                        <HelpOutline className='sidebarIcon'/>
-                        <span className="sidebarListItemText">Questions</span>
-                    </li>
-                    <li className="sidebarListItem">
-                        <WorkOutline className='sidebarIcon'/>
-                        <img className='sidebarIcon' src="https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/mk4dH3FK0jT.png" alt="" />
-
-                        <span className="sidebarListItemText">Jobs</span>
+                        {/* <HelpOutline className='sidebarIcon'/> */}
+                        <img  className='sidebarIcon' src="https://static.xx.fbcdn.net/rsrc.php/v3/y-/r/TbOx5lWkw-N.png" alt="" />
+                        <span className="sidebarListItemText">Pages</span>
                     </li>
                     <li className="sidebarListItem">
                         {/* <Event className='sidebarIcon'/> */}
@@ -63,10 +58,16 @@ export const Sidebar=()=>{
                         <span className="sidebarListItemText">Events</span>
                     </li>
                     <li className="sidebarListItem">
-                        <School className='sidebarIcon'/>
-                        <img className='sidebarIcon' src="https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/mk4dH3FK0jT.png" alt="" />
+                        {/* <WorkOutline className='sidebarIcon'/> */}
+                        <img className='sidebarIcon' src="https://static.xx.fbcdn.net/rsrc.php/v3/yZ/r/FotFk27Ykon.png" alt="" />
 
-                        <span className="sidebarListItemText">Courses</span>
+                        <span className="sidebarListItemText">Most recent</span>
+                    </li>
+                    <li className="sidebarListItem">
+                        {/* <School className='sidebarIcon'/> */}
+                        <img className='sidebarIcon' src="https://static.xx.fbcdn.net/rsrc.php/v3/yI/r/6z6PkjynH7u.png" alt="" />
+
+                        <span className="sidebarListItemText">Favourite</span>
                     </li>
                    
                 </ul>
