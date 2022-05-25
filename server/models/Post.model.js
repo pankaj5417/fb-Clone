@@ -17,5 +17,9 @@ const postSchema=new mongoose.Schema({
         default:[]
     },
 
+}
+,
+{
+    timestamps:true
 })
 module.exports=mongoose.model('post',postSchema)
