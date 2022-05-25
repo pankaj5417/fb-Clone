@@ -6,13 +6,16 @@ import './home.css'
 export const Home=()=>{
     return (
         <>
+        <div className="home">
         <Topbar />
         <div className="homeContainer">
             <Sidebar/>
             <Feed/>
             <Rightbar/>
         </div>
-        this is home
+
+        </div>
+       
         </>
     )
 }

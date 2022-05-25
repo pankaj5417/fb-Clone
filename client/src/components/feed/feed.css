@@ -1,9 +1,10 @@
 .feed{
     flex:5.5;
-    background-color:white;
+    /* background-color:white; */
     
 }
 
 .feedWrapper{
     padding: 20px;
+    /* background-color:white; */
 }
