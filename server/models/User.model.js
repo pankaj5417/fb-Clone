@@ -1,30 +1,42 @@
 const mongoose=require("mongoose")
 
 const userSchema=new mongoose.Schema({
+//     userId:{
+//   type:mongoose.Types.ObjectId,
+//     },
     firstname:{
         type:String,
         required:true,
         min:3,
         max:50,
-        unique:true
+        default:""
     },
     surname:{
         type:String,
         min:3,
         max:50,
-        unique:true
+        default:""
     },
     email:{
         type:String,
         required:true,
         max:50,
-        unique:true
+       
     },
 
     password:{
         type:String,
         required:true,
         min:6
+    },
+    dob:{
+        type:String,
+        required:true,
+        
+    },
+    gender:{
+        type:String,
+        required:true,
     },
    
     profilePicture:{

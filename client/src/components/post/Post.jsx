@@ -32,10 +32,10 @@ console.log("user",user)
         <div className="postWrapper">
           <div className="postTop">
             <div className="postTopLeft">
-              <Link to={`/profile/${user.username}`}>
+              <Link to={`/profile/${user.firstname}`}>
               <img
                 src={
-                  user.profilePicture||PF+"/person/noAvatar.png"
+                  user.profilePicture?PF+user.profilePicture:PF+"/person/noAvatar.png"
                 }
                 alt=""
                 className="postProfileImg"

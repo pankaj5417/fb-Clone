@@ -6,7 +6,7 @@ export default function Friend({ user }) {
     <>
       <li className="sidebarFriend">
         <img className="sidebarFriendImg" src={PF+user.profilePicture} alt="" />
-        <span className="sidebarFriendName">{user.username}</span>
+        <span className="sidebarFriendName">{user.firstname}</span>
       </li>
     </>
   );

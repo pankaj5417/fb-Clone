@@ -1,10 +1,13 @@
 import {Chat, Notifications, Person, Search} from '@mui/icons-material'
 import HomeIcon from '@mui/icons-material/Home';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../../context/AuthContext';
 import './topbar.css'
 export const Topbar=()=>{
-
+    const {user}=useContext(AuthContext)
+   const PF=process.env.REACT_APP_PUBLIC_FOLDER
     return (
         <>
         <div className='topbar'>
@@ -64,8 +67,18 @@ export const Topbar=()=>{
         </div>
         <div className="topbarRight">
             <div className='topbarProfile'>
-            <img src="/assets/person/1.jpeg" alt="" className='topbarImg'/>
-            <span style={{color:"black"}}>Safak </span>
+            <Link to={`/profile/${user.firstname}`}>
+              <img
+                src={
+                  user.profilePicture?PF+user.profilePicture:PF+"/person/noAvatar.png"
+                }
+                alt=""
+                className="topbarImg"
+              />
+              
+              </Link>
+            {/* <img src={user.profilePicture?PF+user.profilePicture:PF+"/person/noAvatar.png"} alt="" className='topbarImg'/> */}
+            <span style={{color:"black"}}>{user.firstname} </span>
 
             </div>
             <div className="topbarIcons">

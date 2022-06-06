@@ -5,20 +5,23 @@ import { Posts } from "../../dummyData";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios"
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 export const Feed = ({username}) => {
+  const {user}=useContext(AuthContext)
     const [post,setPost]=useState([])
     useEffect(()=>{
       const fetchPosts=async()=>{
-         const res= username?
-       await axios.get("/posts/profile/"+username)
-        :await axios.get("/posts/timeline/629ce06a73fe0f8796cd2344")
+         const res= user.firstname?
+       await axios.get("/posts/profile/"+user.firstname)
+        :await axios.get("/posts/timeline/"+user._id)
         console.log("feedres",res)
         setPost(res.data)
 
       }
       fetchPosts()
 
-    },[username])
+    },[user.firstname,user._id])
    // console.log(post)
   return (
     <>

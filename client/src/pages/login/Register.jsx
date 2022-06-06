@@ -6,6 +6,7 @@ import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import { useState } from "react";
 import axios from "axios";
+import { Navigate } from "react-router-dom";
 
 export default function Register({ setOpen }) {
   const [signup, setSignup] = useState({
@@ -25,7 +26,11 @@ export default function Register({ setOpen }) {
   const handleSubmit = async(e) => {
     e.preventDefault();
     const res=await axios.post("/auth/register",signup);
-    console.log("signup",res)
+    console.log("signupData",res.data.message)
+    if(res.data.message==="registration successful"){
+      alert("registration successful")
+      setOpen(false)
+    }
     
   };
   console.log("signup", signup);

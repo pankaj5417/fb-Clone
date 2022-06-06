@@ -6,21 +6,29 @@ const User=require("../models/User.model")
 //REGISTER
 
 router.post("/register", async(req,res)=>{
-    //console.log("ready")
+    console.log("ready")
     try{
+        const userExist=await User.findOne({email:req.body.email})
+        console.log("userExist", userExist)
+        if(userExist){
+            return res.status(400).json({message:"User already exists"})
+        }
         //generate new hashed  password
         const salt=await bcrypt.genSalt(10);
         const hashedPassword=await bcrypt.hash(req.body.password ,salt)
         //create new user
         const newuser= await new User({
+            
             firstname:req.body.firstname,
             surname:req.body.surname,
             email:req.body.email,
+            dob:req.body.dob,
+            gender:req.body.gender,
             password:hashedPassword
         })
         //save user and response
         const user= await newuser.save()
-        res.status(200).json(user)
+       return  res.status(200).json({user, message:"registration successful"})
 
     }catch(err){
         console.log(err)
@@ -31,7 +39,7 @@ router.post("/register", async(req,res)=>{
 router.get("/register", async(req,res)=>{
     console.log("ready")
     const newuser= await new User({
-        username:req.body.username,
+        username:req.body.firstname,
         email:req.body.email,
         password:req.body.password
     })
