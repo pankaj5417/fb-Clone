@@ -1,9 +1,15 @@
 const mongoose=require("mongoose")
 
 const userSchema=new mongoose.Schema({
-    username:{
+    firstname:{
         type:String,
         required:true,
+        min:3,
+        max:50,
+        unique:true
+    },
+    surname:{
+        type:String,
         min:3,
         max:50,
         unique:true
@@ -62,4 +68,4 @@ const userSchema=new mongoose.Schema({
 }
 )
 
-module.exports=mongoose.model("users ",userSchema)
+module.exports=mongoose.model("users",userSchema)

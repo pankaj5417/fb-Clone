@@ -18,7 +18,7 @@ export default function Post({ post }) {
     setIsLiked(!isLiked);
   };
   useEffect(()=>{
-    const fetchUser=async()=>{
+    const fetchUser= async()=>{
       const res=await axios.get(`/users?userId=${post.userId}`)
       console.log("userres",res)
       setUser(res.data)
