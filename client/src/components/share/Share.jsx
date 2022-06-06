@@ -1,25 +1,32 @@
 
 import { EmojiEmotions, Label, PermMedia, Room } from '@mui/icons-material'
+import { useState } from 'react'
+import { useRef } from 'react'
+import { useContext } from 'react'
+import { AuthContext } from '../../context/AuthContext'
 import './share.css'
 export const Share=()=>{
     const PF=process.env.REACT_APP_PUBLIC_FOLDER
-
+    const [file,setFile]=useState(null)
+    const desc=useRef()
+const {user}=useContext(AuthContext)
     return (
         <>
         <div className="share">
             <div className="shareWrapper">
                 <div className="shareTop">
-                    <img src={`${PF}/person/4.jpeg`} alt="" className="shareProfileImg" />
-                    <input type="text" className="shareInput" placeholder="What's in your mind?" />
+                    <img src={user.profilePicture?PF+user.profilePicture:PF+`/person/noAvatar.png`} alt="" className="shareProfileImg" />
+                    <input type="text" className="shareInput" placeholder={"What's in your mind "+user.firstname+" ?"} />
 
                 </div>
                 <hr className='shareHr'/>
                 <div className="shareBottom">
                     <div className='shareOptions'>
-                    <div className="shareOption">
+                    <label htmlFor='file' className="shareOption">
                         <PermMedia htmlColor='tomato' className='shareIcon'/>
                         <span className="shareOptionsText">Photo/Video</span>
-                    </div>
+                        <input style={{display:"none"}} type="file" id="file" accept='.png,.jpeg,.jpg' onChange={(e)=>setFile(e.target.files[0])} />
+                    </label>
                     <div className="shareOption">
                         <Label htmlColor='blue' className='shareIcon'/>
                         <span className="shareOptionsText">Tag</span>

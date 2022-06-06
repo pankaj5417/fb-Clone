@@ -9,8 +9,30 @@ const userRoute=require("./routes/user.controller")
 const authRoute=require("./routes/auth.controller")
 const postRoute=require('./routes/post.controller')
 const port=process.env.PORT||8000
-
+const multer  = require('multer')
 dotenv.config()
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, 'public/images')
+    },
+    filename: function (req, file, cb) {
+      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+      cb(null, uniqueSuffix+'-' + file.originalname )
+    }
+  })
+  
+  const upload = multer({ storage: storage })
+
+
+
+app.post('/api/upload', upload.single('file'), function (req, res, next) {
+ try{
+    return res.status(200).json("File uploaded successfully")
+ }catch(err){
+
+ }
+})
 
 mongoose.connect(process.env.MONGO_URL, (err)=>{
     if(err){
