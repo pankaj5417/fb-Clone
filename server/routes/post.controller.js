@@ -2,12 +2,19 @@ const express=require('express')
 const PostModel = require('../models/Post.model')
 const UserModel = require('../models/User.model')
 const router=express.Router()
-
+const path  = require("path")
+const multer = require("multer")
+const upload=require("../upload.js")
 //create a post
 
-router.post("/", async(req, res)=>{
+router.post("/",upload.single("file"), async(req, res)=>{
     try{
-        const newPost= await PostModel.create(req.body)
+        console.log(req.file)
+        const newPost= await PostModel.create({
+            userId:req.body.userId,
+          desc:req.body.desc,
+          img:req.file.filename  
+        })
         return res.status(200).json({
             newPost,message:"a new post created"
         })

@@ -12,7 +12,7 @@ export const Feed = ({username}) => {
     const [post,setPost]=useState([])
     useEffect(()=>{
       const fetchPosts=async()=>{
-         const res= user.firstname?
+         const res= false?
        await axios.get("/posts/profile/"+user.firstname)
         :await axios.get("/posts/timeline/"+user._id)
         console.log("feedres",res)
