@@ -5,9 +5,7 @@ const bcrypt=require('bcrypt')
 
 const router=express.Router()
 
-// router.get("/", (req,res)=>{
-//     res.send("hey it is user page")
-// })
+
 
 //update user
 
@@ -66,6 +64,26 @@ router.get("/", async(req,res)=>{
          return res.status(200).json(other)
     }catch(err){
         return res.status(500).json(err)
+    }
+})
+
+
+//get friends
+
+router.get("/friends/:userId", async(req, res)=>{
+    try{
+        const user= await User.findById(req.params.userId);
+        const friends= await Promise.all(user.following.map(friendId=>{
+            return User.findById(friendId)
+        }))
+
+        let friendList=[];
+        friends.map(friend=>{
+            const {_id,firstname,profilePicture}=friend;
+         friendList.push({_id,firstname,profilePicture})
+        })
+    }catch(err){
+        return res.status(400).json(err)
     }
 })
 

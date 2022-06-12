@@ -16,7 +16,9 @@ export const Feed = ({username}) => {
        await axios.get("/posts/profile/"+user.firstname)
         :await axios.get("/posts/timeline/"+user._id)
         console.log("feedres",res)
-        setPost(res.data)
+        setPost(res.data.sort((a,b)=>{
+          return new Date(b.createdAt)-new Date(a.createdAt);
+        }))
 
       }
       fetchPosts()
@@ -27,7 +29,7 @@ export const Feed = ({username}) => {
     <>
       <div className="feed">
         <div className="feedWrapper">
-          <Share />
+         {username===user.firstname && <Share />}
           {post.map((p) => (
             <Post key={p._id} post={p} />
           ))}
